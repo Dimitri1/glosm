@@ -22,6 +22,9 @@
 #define FIRSTPERSONVIEWER_HH
 
 #include <glosm/Viewer.hh>
+#include "../../viewer/trafic-simulation/GPXWriter.hh"
+
+
 
 class Projection;
 class HeightmapDatasource;
@@ -76,8 +79,10 @@ public:
 	 * @param speed movement speed in meters/second
 	 * @param time time delta for movement in seconds
 	 */
-	void Move(int flags, float speed, float time);
-
+	//void Move(int flags, float speed, float time);
+	//void Move(int flags, float speed, float time, GPXWriter *g) ; 
+	void Move(int flags, float speed, float time) ; 
+	
 	void SetRotation(float yaw, float pitch);
 
 	void Rotate(float yawspeed, float pitchspeed, float time);

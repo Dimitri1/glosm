@@ -21,6 +21,12 @@
 #include <glosm/PreloadedGPXDatasource.hh>
 #include <glosm/ParsingHelpers.hh>
 
+#include <unistd.h>
+#include <sstream> 
+
+
+#include <fstream>
+
 PreloadedGPXDatasource::PreloadedGPXDatasource() : XMLParser(XMLParser::HANDLE_ELEMENTS | XMLParser::HANDLE_CHARDATA) {
 }
 
@@ -85,6 +91,68 @@ void PreloadedGPXDatasource::Load(const char* filename) {
 
 	XMLParser::Load(filename);
 }
+
+/*DIMITRI : New load funtction to load all the file which exists
+in the  directory passed in argument*/
+
+//  Utiliser int access(const char *path, int amode); 
+//  de POSIX => #include <unistd.h>
+
+
+void PreloadedGPXDatasource::Load_all_in_dir(const char* dir) {
+
+   int i ;
+   std::string result;   
+   std::string tmp;   
+   std::string generic_name("/GPX_out_");     
+   std::ostringstream convert;  
+
+    i = 0 ;
+    convert <<   i ;   
+    result = convert.str(); 
+
+    tmp +=   dir          ; 
+    //tmp +=   generic_name ; 
+    tmp +=   result       ; 
+    tmp +=   ".gpx"       ; 
+    	
+
+
+    
+   
+   while ( access(tmp.c_str(), 0)  == 0 )
+   { 
+     
+    fprintf(stderr," %s  \n",tmp.c_str() ) ; 
+    Load(tmp.c_str() ) ; 		
+   
+    i++ ;
+    convert.str("");
+    convert <<   i ;
+    result = convert.str(); 
+
+    tmp.clear() ;  	
+    tmp +=   dir          ; 
+    //tmp +=   generic_name ; 
+    tmp +=   result       ; 
+    tmp +=   ".gpx"       ; 
+
+   }
+
+//  convert <<   i ;   
+//    tmp = convert.str(); 
+
+
+
+
+   
+
+
+}
+
+
+
+
 
 void PreloadedGPXDatasource::GetPoints(std::vector<Vector3i>& out, const BBoxi& bbox) const {
 	for (PointsVector::const_iterator i = points_.begin(); i != points_.end(); ++i)

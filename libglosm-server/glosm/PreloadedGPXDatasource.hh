@@ -85,6 +85,7 @@ public:
 	 * @param filename path to dump file
 	 */
 	virtual void Load(const char* filename);
+	virtual void Load_all_in_dir(const char* dir) ;
 
 	virtual void GetPoints(std::vector<Vector3i>& out, const BBoxi& bbox) const;
 };

@@ -50,6 +50,8 @@
 #include <glosm/ParsingHelpers.hh>
 #include <glosm/WayMerger.hh>
 
+
+
 osmid_t PreloadedXmlDatasource::next_synthetic_id_ = std::numeric_limits<osmid_t>::max();
 
 PreloadedXmlDatasource::PreloadedXmlDatasource() : XMLParser(XMLParser::HANDLE_ELEMENTS), bbox_(BBoxi::Empty()) {
@@ -310,6 +312,8 @@ void PreloadedXmlDatasource::Load(const char* filename) {
 	current_tag_ = NONE;
 	tag_level_ = 0;
 
+      //  fprintf(stderr," (%s) ",filename  );
+ 
 	XMLParser::Load(filename);
 
 	/* if file lacked bounding box, generate one ourselves */

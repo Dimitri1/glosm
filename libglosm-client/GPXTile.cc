@@ -52,7 +52,9 @@ void GPXTile::Render() {
 	if (points_.get()) {
 		glDepthFunc(GL_LEQUAL);
 
-		glColor4f(1.0f, 0.0f, 1.0f, 0.5f);
+		glColor4f(1.0f, 0.0f, 0.2f, 0.5f);
+
+		//glColor4f(1.0f, 0.0f, 0.2f, 0.5f);
 		glPointSize(3.0);
 
 		points_->Bind();

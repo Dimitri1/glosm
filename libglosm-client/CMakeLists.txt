@@ -31,6 +31,9 @@ SET(SOURCES
 	TerrainLayer.cc
 	TerrainTile.cc
 	TileManager.cc
+
+	../viewer/trafic-simulation/GPXWriter.cc	
+
 )
 
 # We check whether GL functions != NULL there. These funcions may
@@ -63,9 +66,16 @@ SET(HEADERS
 	glosm/TileManager.hh
 	glosm/VertexBuffer.hh
 	glosm/Viewer.hh
+	
+
+	../viewer/trafic-simulation/GPXWriter.hh
+	../viewer/MyGlobalVariables.hh	
 )
 
-INCLUDE_DIRECTORIES(. ../libglosm-server ${EXPAT_INCLUDE_DIR} ${GL_INCLUDE_DIRS})
+INCLUDE_DIRECTORIES(. ../libglosm-server ${EXPAT_INCLUDE_DIR} ${GL_INCLUDE_DIRS}
+		      ../viewer 	
+)
+
 
 ADD_LIBRARY(glosm-client SHARED ${SOURCES})
 TARGET_LINK_LIBRARIES(glosm-client glosm-server ${GL_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})

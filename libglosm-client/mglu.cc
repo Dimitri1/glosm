@@ -63,6 +63,7 @@ void mgluLookAt(float eyex, float eyey, float eyez, float centerx, float centery
 
 	glLoadMatrixf(matrix);
 	glTranslatef(-eyex, -eyey, -eyez);
+
 }
 
 #endif
