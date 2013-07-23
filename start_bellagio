@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo Start GLOSM
+./viewer/glosm-viewer-glut   -s map/GPX_output.gpx ../myfiles/map/bellagio.osm ../OPTIONS.opt  dim_mode_1 : ON   |->  out.gpx 
+exit 0
