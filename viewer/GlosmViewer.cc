@@ -38,12 +38,19 @@
 #include <cstdio>
 #include <cstring>
 
+
+#include <glosm//SphericalProjection.hh>
+
+
+
+
+
 GlosmViewer::GlosmViewer() : projection_(MercatorProjection()), viewer_(new FirstPersonViewer) {
 	screenw_ = screenh_ = 1;
 	nframes_ = 0;
 
 	movementflags_ = 0;
-	speed_ = 200.0f;
+	speed_ = 20.0f;
 	lockheight_ = 0;
 
 	drag_ = slow_ = fast_ = false;
@@ -92,6 +99,7 @@ void GlosmViewer::Init(int argc, char** argv) {
 	const char* srtmpath = NULL;
 	while ((c = getopt(argc, argv, "sfht:l:")) != -1) {
 		switch (c) {
+		
 		case 's': projection_ = SphericalProjection(); break;
 		case 't': srtmpath = optarg; break;
 		case 'l': {
@@ -131,6 +139,17 @@ void GlosmViewer::Init(int argc, char** argv) {
 	argc -= optind;
 	argv += optind;
 
+
+/*Definition of other options */
+
+ 	std::string opt1("GPX_write_mode") ;
+ 	std::string on("ON") ;
+   	std::string off("OFF") ;
+
+        std::string name("GPX_out_thread/GPX_out_")  ;
+  
+ 	//std::string opt2("lapio") ; 
+
 	/* load data */
 	for (int narg = 0; narg < argc; ++narg) {
 		std::string file = argv[narg];
@@ -141,19 +160,50 @@ void GlosmViewer::Init(int argc, char** argv) {
 				Timer t;
 				osm_datasource_.reset(new PreloadedXmlDatasource);
 				osm_datasource_->Load(argv[narg]);
+
 				fprintf(stderr, "Loaded in %.3f seconds\n", t.Count());
 			} else {
 				fprintf(stderr, "Only single OSM file may be loaded at once, skipped\n");
 			}
-		} else if (file.rfind(".gpx") == file.length() - 4) {
+		} 
+		else if (file.rfind(".gpx") == file.length() - 4 ) {
+		           
 			fprintf(stderr, "Loading %s as GPX...\n", argv[narg]);
 			if (gpx_datasource_.get() == NULL)
 				gpx_datasource_.reset(new PreloadedGPXDatasource);
 
 			Timer t;
 			gpx_datasource_->Load(argv[narg]);
-			fprintf(stderr, "Loaded in %.3f seconds\n", t.Count());
-		} else {
+			fprintf(stderr, "Loaded in %.3f seconds\n", t.Count());			
+
+		} 
+
+                 else if (file.rfind(".opt") == file.length() - 4) {
+			OptionParserCSV optprs ; 
+			optprs.get_data(argv[narg]) ;
+			optprs.display_conatainer_car_list_element() ; 
+		} 
+
+		// Case of the option is not active
+
+ 		else if ((opt1.compare(argv[narg]) == 0) && (off.compare(argv[narg + 2]) == 0  )) {
+			fprintf(stderr, "GPX_write_mode : OFF\n");
+			gpx_datasource_->Load_all_in_dir("GPX_out_thread/GPX_out_") ; 
+	
+			//  Ici , il faut appeler la fonction gpx_datasource_->Load(argv[narg]); modifiée
+			//  pour ouvir tout les fichiers du repertoir donné contenant des .GPX automatiquement 
+	
+		} 
+
+		// Case of the option is active 
+ 		else if ((opt1.compare(argv[narg]) == 0) && (on.compare(argv[narg + 2]) == 0  )) {
+			fprintf(stderr, "GPX_write_mode : ON\n");	
+
+ 		} 
+
+	/*DIMITRI : Here it is the code to capture the OPTION file name */
+  	
+		else {
 			fprintf(stderr, "Not loading %s - unknown file type\n", argv[narg]);
 		}
 	}
@@ -225,7 +275,14 @@ void GlosmViewer::InitGL() {
 	}
 
 	Vector3i startpos = geometry_generator_->GetCenter();
+	startpos.z = 1.0f ;
+		
 	osmint_t startheight = fabs((float)geometry_generator_->GetBBox().top - (float)geometry_generator_->GetBBox().bottom) / GEOM_LONSPAN * WGS84_EARTH_EQ_LENGTH * GEOM_UNITSINMETER / 10.0;
+
+
+/*DIMITRI : Modification de la hauteur de départ*/
+	startheight = 0.00001f ;
+
 	float startyaw = 0;
 	float startpitch = -M_PI_4;
 
@@ -248,6 +305,9 @@ void GlosmViewer::InitGL() {
 }
 
 void GlosmViewer::Render() {
+
+
+	
 	/* update scene */
 	gettimeofday(&curtime_, NULL);
 	float dt = (float)(curtime_.tv_sec - prevtime_.tv_sec) + (float)(curtime_.tv_usec - prevtime_.tv_usec)/1000000.0f;
@@ -296,7 +356,7 @@ void GlosmViewer::Render() {
 			myspeed *= 5.0;
 		if (slow_)
 			myspeed /= 5.0;
-
+		
 		viewer_->Move(movementflags_, myspeed, dt);
 	}
 	if (lockheight_ != 0)
@@ -351,9 +411,22 @@ void GlosmViewer::Resize(int w, int h) {
 	WarpCursor(w/2, h/2);
 }
 
+/*DIMITRI : C'est ici qu'on doit implémenter l'appel au code de contrôle du Player de Maxim 
+	    :: Au lieu de modifier dirrectement mouvement flags, on va agir sur les commander du 
+	       Player de Maxim . 		
+*/
+
 void GlosmViewer::KeyDown(int key) {
+
+
+	
+
+ 	//fprintf
+
 	switch (key) {
 	case 27: case 'q':
+	//Closing GPX File before exciting
+		//g.Close() ;
 		exit(0);
 		break;
 	case 'w': case KEY_UP:

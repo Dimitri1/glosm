@@ -13,8 +13,13 @@ IF(BUILD_VIEWER_SDL)
 
 	# Targets
 	SET(SOURCES
-		SDLMain.cc
+		GLUTMain.cc
 		GlosmViewer.cc
+		trafic-simulation/CarGlosm.cc
+	  	trafic-simulation/OptionParserCSV.cc
+		trafic-simulation/GPXWriter.cc
+		../libglosm-server/PreloadedXmlDatasource.cc
+			
 	)
 
 	INCLUDE_DIRECTORIES(
@@ -49,6 +54,11 @@ IF(BUILD_VIEWER_GLUT)
 	SET(SOURCES
 		GLUTMain.cc
 		GlosmViewer.cc
+		trafic-simulation/CarGlosm.cc
+	  	trafic-simulation/OptionParserCSV.cc
+		trafic-simulation/GPXWriter.cc
+		../libglosm-server/PreloadedXmlDatasource.cc
+		
 	)
 
 	INCLUDE_DIRECTORIES(
