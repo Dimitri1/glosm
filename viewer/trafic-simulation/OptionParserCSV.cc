@@ -34,15 +34,12 @@
 
 	int  OptionParserCSV::csv_line_to_( std::string  *l ,struct car_list_element *n)
 	{
-	   char buff[500] ;  
-	   char temp[200] ; 
-	   int NB  = 10 ; 
+	   char buff[500] ;
 	   int i ;
 	   char *pt ; 
 	   strcpy(&buff[0],l->c_str()) ;
 	   char delimiter[10] =   " ,\"" ;
-           int ignored_line_NB =  0 ; 
-	 
+         
 	  i = 0  ; 
 	  pt = strtok (buff,delimiter);
 
@@ -76,11 +73,10 @@
 
 	int OptionParserCSV::get_data(std::string filename_in)
 	{ struct car_list_element n  ;
-	  int i ;
-	  std::vector< struct node>::iterator it_infos ;
+	 // std::vector< struct node>::iterator it_infos ;
 	  std::ifstream f_in(filename_in.c_str()) ;
           fprintf(stderr, "Loading options file (%s)\n", filename_in.c_str());
-	  int ignored_line_NB  = 0  ; 
+	 
 
           
 	  if(f_in) 
@@ -97,6 +93,9 @@
 	  }
 	  else 
 	  {  std::cerr << "Impossible d'ouvrir le fichier !" << std::endl;  return 0 ; }
+
+
+
 	  
 	  return 1 ; 
 	}

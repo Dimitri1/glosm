@@ -58,7 +58,9 @@
 #include "OptionParserCSV.hh"
 
 class OptionParserCSV ;
-
+class GPXWriter ;
+class CarGlosmContainer ; 
+class CarGlosm ; 
 
 struct CarPos
 { int    ID ; 
@@ -98,7 +100,7 @@ class  CarGlosm{
 
  public : 
 
-    CarGlosm(Vector3i  *v,std::vector<class CarGlosm> *CarContainer) ; 
+    CarGlosm(Vector3i  *v,CarGlosmContainer *CarContainer) ; 
     CarGlosm() ; 
     ~CarGlosm() ; 
     
@@ -109,8 +111,7 @@ class  CarGlosm{
     Vector3i pos_  ;
     int ID ;	
     
-    std::vector<class CarGlosm> *CarContainer_ ; 
-    //std::string OSMfileName ; 
+    CarGlosmContainer *CarContainer_ ; 
     const char *OSMfileName ;
 
  private : 
@@ -127,7 +128,6 @@ class CarGlosmContainer:public OptionParserCSV
    std::vector<class CarGlosm> CarContainer_ ;
    std::vector<class CarGlosm>::iterator it_car_ ;
    std::string OSMfileName ; 
-   //std::string OSMfileName ; 
     
     int nb_car()  ;
     CarGlosmContainer() ;
@@ -135,7 +135,7 @@ class CarGlosmContainer:public OptionParserCSV
     void add_car_to_Container( Vector3i  *v) ; 
     void LoadCarList(std::string filename_in) ;
     void LoadOSMFile(std::string filename_in) ;
-    
+    void start_all_thread()  ; 
 
 } ;
 

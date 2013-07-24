@@ -7,7 +7,8 @@
 #include "trafic-simulation/CarGlosm.hh"
 
 
-bool writemode ; 
+bool writemode ;
+ 
 //GPXWriter g ; 
 
 

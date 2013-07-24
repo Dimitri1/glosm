@@ -166,28 +166,13 @@ void GlosmViewer::Init(int argc, char** argv) {
 				fprintf(stderr, "Only single OSM file may be loaded at once, skipped\n");
 			}
 		} 
-		else if (file.rfind(".gpx") == file.length() - 4 ) {
-		           
-			fprintf(stderr, "Loading %s as GPX...\n", argv[narg]);
-			if (gpx_datasource_.get() == NULL)
-				gpx_datasource_.reset(new PreloadedGPXDatasource);
-
-			Timer t;
-			gpx_datasource_->Load(argv[narg]);
-			fprintf(stderr, "Loaded in %.3f seconds\n", t.Count());			
-
-		} 
-
-                 else if (file.rfind(".opt") == file.length() - 4) {
-			OptionParserCSV optprs ; 
-			optprs.get_data(argv[narg]) ;
-			optprs.display_conatainer_car_list_element() ; 
-		} 
 
 		// Case of the option is not active
 
  		else if ((opt1.compare(argv[narg]) == 0) && (off.compare(argv[narg + 2]) == 0  )) {
 			fprintf(stderr, "GPX_write_mode : OFF\n");
+
+			gpx_datasource_.reset(new PreloadedGPXDatasource) ;
 			gpx_datasource_->Load_all_in_dir("GPX_out_thread/GPX_out_") ; 
 	
 			//  Ici , il faut appeler la fonction gpx_datasource_->Load(argv[narg]); modifiée
@@ -202,7 +187,6 @@ void GlosmViewer::Init(int argc, char** argv) {
  		} 
 
 	/*DIMITRI : Here it is the code to capture the OPTION file name */
-  	
 		else {
 			fprintf(stderr, "Not loading %s - unknown file type\n", argv[narg]);
 		}
