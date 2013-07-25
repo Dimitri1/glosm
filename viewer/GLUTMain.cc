@@ -147,6 +147,7 @@ void KeyUp(unsigned char key, int, int) {
 
 int real_main(int argc, char** argv) {
 
+        bool writemode_ ;
   	int argc_osm ;
   	int argc_opt ;
   
@@ -162,10 +163,11 @@ int real_main(int argc, char** argv) {
 		 } 
 	
         	 else if ((opt1.compare(argv[narg]) == 0) && (on.compare(argv[narg + 2]) == 0  )) {
-			writemode = true ; 	
-		 	} 
+			writemode_ = true ; 	
+		 } 
+
 	         else if ((opt1.compare(argv[narg]) == 0) && (on.compare(argv[narg + 2]) == 0  )) {
-		        writemode = false ; 	
+		        writemode_ = false ; 	
 		 } 
                  else if (file.rfind(".opt") == file.length() - 4) {
 	                argc_opt = narg ; 
@@ -177,7 +179,7 @@ int real_main(int argc, char** argv) {
 
 	}
 
-        if (writemode == true )		
+        if (writemode_ == true )		
  	{  
 	    CarGlosmContainer container ;
 	    container.LoadOSMFile(argv[argc_osm] ) ;

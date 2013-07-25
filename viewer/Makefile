@@ -259,6 +259,30 @@ trafic-simulation/CarGlosm.cc.s:
 	cd /home/dimitri/Dropbox/trc_simulator_8/glosm && $(MAKE) -f viewer/CMakeFiles/glosm-viewer-glut.dir/build.make viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/CarGlosm.cc.s
 .PHONY : trafic-simulation/CarGlosm.cc.s
 
+trafic-simulation/CarListLoader.o: trafic-simulation/CarListLoader.cc.o
+.PHONY : trafic-simulation/CarListLoader.o
+
+# target to build an object file
+trafic-simulation/CarListLoader.cc.o:
+	cd /home/dimitri/Dropbox/trc_simulator_8/glosm && $(MAKE) -f viewer/CMakeFiles/glosm-viewer-glut.dir/build.make viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/CarListLoader.cc.o
+.PHONY : trafic-simulation/CarListLoader.cc.o
+
+trafic-simulation/CarListLoader.i: trafic-simulation/CarListLoader.cc.i
+.PHONY : trafic-simulation/CarListLoader.i
+
+# target to preprocess a source file
+trafic-simulation/CarListLoader.cc.i:
+	cd /home/dimitri/Dropbox/trc_simulator_8/glosm && $(MAKE) -f viewer/CMakeFiles/glosm-viewer-glut.dir/build.make viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/CarListLoader.cc.i
+.PHONY : trafic-simulation/CarListLoader.cc.i
+
+trafic-simulation/CarListLoader.s: trafic-simulation/CarListLoader.cc.s
+.PHONY : trafic-simulation/CarListLoader.s
+
+# target to generate assembly for a file
+trafic-simulation/CarListLoader.cc.s:
+	cd /home/dimitri/Dropbox/trc_simulator_8/glosm && $(MAKE) -f viewer/CMakeFiles/glosm-viewer-glut.dir/build.make viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/CarListLoader.cc.s
+.PHONY : trafic-simulation/CarListLoader.cc.s
+
 trafic-simulation/GPXWriter.o: trafic-simulation/GPXWriter.cc.o
 .PHONY : trafic-simulation/GPXWriter.o
 
@@ -282,30 +306,6 @@ trafic-simulation/GPXWriter.s: trafic-simulation/GPXWriter.cc.s
 trafic-simulation/GPXWriter.cc.s:
 	cd /home/dimitri/Dropbox/trc_simulator_8/glosm && $(MAKE) -f viewer/CMakeFiles/glosm-viewer-glut.dir/build.make viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/GPXWriter.cc.s
 .PHONY : trafic-simulation/GPXWriter.cc.s
-
-trafic-simulation/OptionParserCSV.o: trafic-simulation/OptionParserCSV.cc.o
-.PHONY : trafic-simulation/OptionParserCSV.o
-
-# target to build an object file
-trafic-simulation/OptionParserCSV.cc.o:
-	cd /home/dimitri/Dropbox/trc_simulator_8/glosm && $(MAKE) -f viewer/CMakeFiles/glosm-viewer-glut.dir/build.make viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/OptionParserCSV.cc.o
-.PHONY : trafic-simulation/OptionParserCSV.cc.o
-
-trafic-simulation/OptionParserCSV.i: trafic-simulation/OptionParserCSV.cc.i
-.PHONY : trafic-simulation/OptionParserCSV.i
-
-# target to preprocess a source file
-trafic-simulation/OptionParserCSV.cc.i:
-	cd /home/dimitri/Dropbox/trc_simulator_8/glosm && $(MAKE) -f viewer/CMakeFiles/glosm-viewer-glut.dir/build.make viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/OptionParserCSV.cc.i
-.PHONY : trafic-simulation/OptionParserCSV.cc.i
-
-trafic-simulation/OptionParserCSV.s: trafic-simulation/OptionParserCSV.cc.s
-.PHONY : trafic-simulation/OptionParserCSV.s
-
-# target to generate assembly for a file
-trafic-simulation/OptionParserCSV.cc.s:
-	cd /home/dimitri/Dropbox/trc_simulator_8/glosm && $(MAKE) -f viewer/CMakeFiles/glosm-viewer-glut.dir/build.make viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/OptionParserCSV.cc.s
-.PHONY : trafic-simulation/OptionParserCSV.cc.s
 
 # Help Target
 help:
@@ -333,12 +333,12 @@ help:
 	@echo "... trafic-simulation/CarGlosm.o"
 	@echo "... trafic-simulation/CarGlosm.i"
 	@echo "... trafic-simulation/CarGlosm.s"
+	@echo "... trafic-simulation/CarListLoader.o"
+	@echo "... trafic-simulation/CarListLoader.i"
+	@echo "... trafic-simulation/CarListLoader.s"
 	@echo "... trafic-simulation/GPXWriter.o"
 	@echo "... trafic-simulation/GPXWriter.i"
 	@echo "... trafic-simulation/GPXWriter.s"
-	@echo "... trafic-simulation/OptionParserCSV.o"
-	@echo "... trafic-simulation/OptionParserCSV.i"
-	@echo "... trafic-simulation/OptionParserCSV.s"
 .PHONY : help
 
 

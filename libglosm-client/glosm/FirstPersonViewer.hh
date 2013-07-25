@@ -23,6 +23,7 @@
 
 #include <glosm/Viewer.hh>
 #include "../../viewer/trafic-simulation/GPXWriter.hh"
+#include "../viewer/MyGlobalVariables.hh"
 
 
 

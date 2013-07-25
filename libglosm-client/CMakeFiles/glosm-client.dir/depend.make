@@ -6,10 +6,6 @@ libglosm-client/CMakeFiles/glosm-client.dir/CheckGL.cc.o: libglosm-client/../lib
 libglosm-client/CMakeFiles/glosm-client.dir/CheckGL.cc.o: libglosm-client/./glosm/CheckGL.hh
 libglosm-client/CMakeFiles/glosm-client.dir/CheckGL.cc.o: libglosm-client/./glosm/util/gl.h
 
-libglosm-client/CMakeFiles/glosm-client.dir/FirstPersonViewer.cc.o: libglosm-client/../viewer/MyGlobalVariables.hh
-libglosm-client/CMakeFiles/glosm-client.dir/FirstPersonViewer.cc.o: libglosm-client/../viewer/trafic-simulation/CarGlosm.hh
-libglosm-client/CMakeFiles/glosm-client.dir/FirstPersonViewer.cc.o: libglosm-client/../viewer/trafic-simulation/GPXWriter.hh
-libglosm-client/CMakeFiles/glosm-client.dir/FirstPersonViewer.cc.o: libglosm-client/../viewer/trafic-simulation/OptionParserCSV.hh
 libglosm-client/CMakeFiles/glosm-client.dir/FirstPersonViewer.cc.o: libglosm-client/FirstPersonViewer.cc
 libglosm-client/CMakeFiles/glosm-client.dir/FirstPersonViewer.cc.o: libglosm-client/glosm/util/gl.h
 libglosm-client/CMakeFiles/glosm-client.dir/FirstPersonViewer.cc.o: libglosm-client/mglu.h
@@ -29,6 +25,10 @@ libglosm-client/CMakeFiles/glosm-client.dir/FirstPersonViewer.cc.o: libglosm-cli
 libglosm-client/CMakeFiles/glosm-client.dir/FirstPersonViewer.cc.o: libglosm-client/../libglosm-server/glosm/geomath.h
 libglosm-client/CMakeFiles/glosm-client.dir/FirstPersonViewer.cc.o: libglosm-client/../libglosm-server/glosm/id_map.hh
 libglosm-client/CMakeFiles/glosm-client.dir/FirstPersonViewer.cc.o: libglosm-client/../libglosm-server/glosm/osmtypes.h
+libglosm-client/CMakeFiles/glosm-client.dir/FirstPersonViewer.cc.o: libglosm-client/./../viewer/MyGlobalVariables.hh
+libglosm-client/CMakeFiles/glosm-client.dir/FirstPersonViewer.cc.o: libglosm-client/./../viewer/trafic-simulation/CarGlosm.hh
+libglosm-client/CMakeFiles/glosm-client.dir/FirstPersonViewer.cc.o: libglosm-client/./../viewer/trafic-simulation/CarListLoader.hh
+libglosm-client/CMakeFiles/glosm-client.dir/FirstPersonViewer.cc.o: libglosm-client/./../viewer/trafic-simulation/GPXWriter.hh
 libglosm-client/CMakeFiles/glosm-client.dir/FirstPersonViewer.cc.o: libglosm-client/./glosm/../../viewer/trafic-simulation/GPXWriter.hh
 libglosm-client/CMakeFiles/glosm-client.dir/FirstPersonViewer.cc.o: libglosm-client/./glosm/FirstPersonViewer.hh
 libglosm-client/CMakeFiles/glosm-client.dir/FirstPersonViewer.cc.o: libglosm-client/./glosm/GPXLayer.hh

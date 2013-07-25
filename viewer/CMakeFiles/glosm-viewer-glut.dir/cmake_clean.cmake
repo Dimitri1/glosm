@@ -2,7 +2,7 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/glosm-viewer-glut.dir/GLUTMain.cc.o"
   "CMakeFiles/glosm-viewer-glut.dir/GlosmViewer.cc.o"
   "CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/CarGlosm.cc.o"
-  "CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/OptionParserCSV.cc.o"
+  "CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/CarListLoader.cc.o"
   "CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/GPXWriter.cc.o"
   "CMakeFiles/glosm-viewer-glut.dir/__/libglosm-server/PreloadedXmlDatasource.cc.o"
   "glosm-viewer-glut.pdb"

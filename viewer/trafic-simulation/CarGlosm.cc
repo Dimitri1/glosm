@@ -15,20 +15,13 @@ enum directions
 
 
 
-Vector3i step_move(Vector3i& pos_,int dir,double angle,double step ); 
-double mod_meter(Vector3i& from,Vector3i& to) ; 
-
-std::vector<Vector3i> GetPointsTrajectoryFromTo(Vector3i *pos_init,Vector3i *pos_final,double step,double stop_dist ) ; 
-Vector3i move_from_to(Vector3i& pos_init,Vector3i& pos_final,double step ) ; 
-void WriteTrajectory(GPXWriter *writer,std::vector<Vector3i> *vect)  ; 
 
 
 
 
 
 
-
-Vector3i move_from_to(Vector3i& pos_init,Vector3i& pos_final,double step )
+Vector3i CarGlosm::move_from_to(Vector3i& pos_init,Vector3i& pos_final,double step )
 {  Vector3i  tmp = pos_final - pos_init ;
    tmp*= 1000; 
    Vector3d  p(tmp.x/(METTRE_VECT_3I_x*step) ,tmp.y/(METTRE_VECT_3I_y*step),1.) ; 
@@ -43,7 +36,7 @@ Vector3i move_from_to(Vector3i& pos_init,Vector3i& pos_final,double step )
   
 
 
-Vector3i step_move(Vector3i& pos_,int dir,double angle,double step )
+Vector3i CarGlosm::step_move(Vector3i& pos_,int dir,double angle,double step )
 {    Vector3d meter_vect(1.,1.,1.)  ;    //<= a definir comme un mettre
     //Vector3d ten_meters_vector(10.,10.,10.)  ;    //<= a definir comme un mettre 
 
@@ -74,7 +67,7 @@ Vector3i step_move(Vector3i& pos_,int dir,double angle,double step )
 } 
 
 
-std::vector<Vector3i> GetPointsTrajectoryFromTo(Vector3i *pos_init,Vector3i *pos_final,double step,double stop_dist )
+std::vector<Vector3i> CarGlosm::GetPointsTrajectoryFromTo(Vector3i *pos_init,Vector3i *pos_final,double step,double stop_dist )
 { std::vector<Vector3i> vect_out ; 
   int nb = 500 ;
   Vector3i c0 =  *pos_init  ; 
@@ -91,7 +84,7 @@ std::vector<Vector3i> GetPointsTrajectoryFromTo(Vector3i *pos_init,Vector3i *pos
 
 
 
-void WriteTrajectory(GPXWriter *writer,std::vector<Vector3i> *vect) 
+void CarGlosm::WriteTrajectory(GPXWriter *writer,std::vector<Vector3i> *vect) 
 {  std::vector<Vector3i>::iterator it ;
    Vector3i v ; 
 
@@ -103,10 +96,8 @@ void WriteTrajectory(GPXWriter *writer,std::vector<Vector3i> *vect)
 }
 
 
-//////////////////////////////////////////////////////////////////////
 
-
-double mod_meter(Vector3i& from,Vector3i& to)
+double CarGlosm::mod_meter(Vector3i& from,Vector3i& to)
 {  Vector3i vect = to - from ; 
   return sqrt(pow(vect.x/METTRE_VECT_3I_x,2) + pow(vect.y/METTRE_VECT_3I_y,2)) ;
 
@@ -136,34 +127,36 @@ void*  my_thread_process(void* arg)
 
     Vector3d step(1.,1.,1.)  ;    
     int coef = 100 ; 
-    /*  
-    car->CarContainer_->display_conatainer_car_list_element() ;
+    /* 
+    //car->CarContainer_->display_conatainer_car_list_element() ;
     std::vector< struct CarGlosm >::iterator itc  ;
     itc =  car->CarContainer_->CarContainer_.begin() ;
-    Vector3i c0 = itc->pos_  ;   */
-    Vector3i c0((int)(-29.53850173950195*10000000),(int)(53.89432144165039*10000000) );
-    Vector3i c1((int)(-29.53850173950195*10000000) + METTRE_VECT_3I_x*coef ,(int)(53.89432144165039*10000000) + METTRE_VECT_3I_y*coef   );  
-    Vector3i c2((int)(-29.53850173950195*10000000) + METTRE_VECT_3I_x*coef ,(int)(53.89432144165039*10000000) - METTRE_VECT_3I_y*coef   );
-    Vector3i c3((int)(-29.53850173950195*10000000) - METTRE_VECT_3I_x*coef ,(int)(53.89432144165039*10000000) + METTRE_VECT_3I_y*coef   );
-    Vector3i c4((int)(-29.53850173950195*10000000) - METTRE_VECT_3I_x*coef ,(int)(53.89432144165039*10000000) - METTRE_VECT_3I_y*coef   );
+    Vector3i c0 =  itc->pos_  ;  */  
+  
+      Vector3i c0((int)(-29.53850173950195*10000000),(int)(53.89432144165039*10000000) );
+      Vector3i c1((int)(-29.53850173950195*10000000) + METTRE_VECT_3I_x*coef ,(int)(53.89432144165039*10000000) + METTRE_VECT_3I_y*coef   );  
+      Vector3i c2((int)(-29.53850173950195*10000000) + METTRE_VECT_3I_x*coef ,(int)(53.89432144165039*10000000) - METTRE_VECT_3I_y*coef   );
+      Vector3i c3((int)(-29.53850173950195*10000000) - METTRE_VECT_3I_x*coef ,(int)(53.89432144165039*10000000) + METTRE_VECT_3I_y*coef   );
+      Vector3i c4((int)(-29.53850173950195*10000000) - METTRE_VECT_3I_x*coef ,(int)(53.89432144165039*10000000) - METTRE_VECT_3I_y*coef   );
 
 
 
 //Testing many trajectories
-    std::vector<Vector3i> test   = GetPointsTrajectoryFromTo(&c0,&c1,3.,5. ) ; 
-    WriteTrajectory(&writer,&test)  ; 
-    test   = GetPointsTrajectoryFromTo(&c0,&c2,3.,5. ) ; 
-    WriteTrajectory(&writer,&test)  ; 
-    test   = GetPointsTrajectoryFromTo(&c0,&c3,3.,5. ) ; 
-    WriteTrajectory(&writer,&test)  ; 
-    test   = GetPointsTrajectoryFromTo(&c0,&c4,3.,5. ) ; 
-    WriteTrajectory(&writer,&test)  ; 
+    std::vector<Vector3i> test   = car->GetPointsTrajectoryFromTo(&c0,&c1,3.,5. ) ; 
+    car->WriteTrajectory(&writer,&test)  ; 
+    test   = car->GetPointsTrajectoryFromTo(&c0,&c2,3.,5. ) ; 
+    car->WriteTrajectory(&writer,&test)  ; 
+    test   = car->GetPointsTrajectoryFromTo(&c0,&c3,3.,5. ) ; 
+    car->WriteTrajectory(&writer,&test)  ; 
+    test   = car->GetPointsTrajectoryFromTo(&c0,&c4,3.,5. ) ; 
+    car->WriteTrajectory(&writer,&test)  ; 
 
 
 
-//Testing BBoxi 
+//Testing BBoxi :: In the future, all the stufs relatives to BBox must be implementer in 
+// 		   Class  CarNavigationHandler
 
-    car->pos_ = Vector3i((int)(-29.53850173950195*10000000)  ,(int)(53.89432144165039*10000000) ) ;
+    car->pos_ = c0  ;
 
     BBoxi b(  car->pos_.x - METTRE_VECT_3I_x*coef   , car->pos_.y + METTRE_VECT_3I_y*coef  , car->pos_.x + METTRE_VECT_3I_x*coef , car->pos_.y - METTRE_VECT_3I_y*coef )  ;
     osm_datasource_->GetWays(ways,b) ;

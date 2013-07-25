@@ -16,7 +16,7 @@ IF(BUILD_VIEWER_SDL)
 		GLUTMain.cc
 		GlosmViewer.cc
 		trafic-simulation/CarGlosm.cc
-	  	trafic-simulation/OptionParserCSV.cc
+	  	trafic-simulation/CarListLoader.cc
 		trafic-simulation/GPXWriter.cc
 		../libglosm-server/PreloadedXmlDatasource.cc
 			
@@ -55,7 +55,7 @@ IF(BUILD_VIEWER_GLUT)
 		GLUTMain.cc
 		GlosmViewer.cc
 		trafic-simulation/CarGlosm.cc
-	  	trafic-simulation/OptionParserCSV.cc
+	  	trafic-simulation/CarListLoader.cc
 		trafic-simulation/GPXWriter.cc
 		../libglosm-server/PreloadedXmlDatasource.cc
 		

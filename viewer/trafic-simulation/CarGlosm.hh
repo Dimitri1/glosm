@@ -55,9 +55,9 @@
 
 
 #include "GPXWriter.hh"
-#include "OptionParserCSV.hh"
+#include "CarListLoader.hh"
 
-class OptionParserCSV ;
+class CarListLoader ;
 class GPXWriter ;
 class CarGlosmContainer ; 
 class CarGlosm ; 
@@ -111,8 +111,16 @@ class  CarGlosm{
     Vector3i pos_  ;
     int ID ;	
     
-    CarGlosmContainer *CarContainer_ ; 
-    const char *OSMfileName ;
+
+
+     Vector3i step_move(Vector3i& pos_,int dir,double angle,double step ); 
+     double mod_meter(Vector3i& from,Vector3i& to) ; 
+     std::vector<Vector3i> GetPointsTrajectoryFromTo(Vector3i *pos_init,Vector3i *pos_final,double step,double stop_dist ) ; 
+     Vector3i move_from_to(Vector3i& pos_init,Vector3i& pos_final,double step ) ; 
+     void WriteTrajectory(GPXWriter *writer,std::vector<Vector3i> *vect)  ; 
+
+     CarGlosmContainer *CarContainer_ ; 
+     const char *OSMfileName ;
 
  private : 
    
@@ -121,7 +129,7 @@ class  CarGlosm{
 
 
 
-class CarGlosmContainer:public OptionParserCSV
+class CarGlosmContainer:public CarListLoader
 {
   public : 
  

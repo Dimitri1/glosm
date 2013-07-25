@@ -175,9 +175,7 @@ void GlosmViewer::Init(int argc, char** argv) {
 			gpx_datasource_.reset(new PreloadedGPXDatasource) ;
 			gpx_datasource_->Load_all_in_dir("GPX_out_thread/GPX_out_") ; 
 	
-			//  Ici , il faut appeler la fonction gpx_datasource_->Load(argv[narg]); modifiée
-			//  pour ouvir tout les fichiers du repertoir donné contenant des .GPX automatiquement 
-	
+			
 		} 
 
 		// Case of the option is active 

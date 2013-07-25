@@ -5,8 +5,9 @@ viewer/CMakeFiles/glosm-viewer-glut.dir/GLUTMain.cc.o: viewer/GLUTMain.cc
 viewer/CMakeFiles/glosm-viewer-glut.dir/GLUTMain.cc.o: viewer/GlosmViewer.hh
 viewer/CMakeFiles/glosm-viewer-glut.dir/GLUTMain.cc.o: viewer/MyGlobalVariables.hh
 viewer/CMakeFiles/glosm-viewer-glut.dir/GLUTMain.cc.o: viewer/trafic-simulation/CarGlosm.hh
+viewer/CMakeFiles/glosm-viewer-glut.dir/GLUTMain.cc.o: viewer/trafic-simulation/CarListLoader.hh
 viewer/CMakeFiles/glosm-viewer-glut.dir/GLUTMain.cc.o: viewer/trafic-simulation/GPXWriter.hh
-viewer/CMakeFiles/glosm-viewer-glut.dir/GLUTMain.cc.o: viewer/trafic-simulation/OptionParserCSV.hh
+viewer/CMakeFiles/glosm-viewer-glut.dir/GLUTMain.cc.o: viewer/../libglosm-client/../viewer/MyGlobalVariables.hh
 viewer/CMakeFiles/glosm-viewer-glut.dir/GLUTMain.cc.o: viewer/../libglosm-client/glosm/../../viewer/trafic-simulation/GPXWriter.hh
 viewer/CMakeFiles/glosm-viewer-glut.dir/GLUTMain.cc.o: viewer/../libglosm-client/glosm/FirstPersonViewer.hh
 viewer/CMakeFiles/glosm-viewer-glut.dir/GLUTMain.cc.o: viewer/../libglosm-client/glosm/GPXLayer.hh
@@ -37,6 +38,11 @@ viewer/CMakeFiles/glosm-viewer-glut.dir/GLUTMain.cc.o: viewer/../libglosm-server
 
 viewer/CMakeFiles/glosm-viewer-glut.dir/GlosmViewer.cc.o: viewer/GlosmViewer.cc
 viewer/CMakeFiles/glosm-viewer-glut.dir/GlosmViewer.cc.o: viewer/GlosmViewer.hh
+viewer/CMakeFiles/glosm-viewer-glut.dir/GlosmViewer.cc.o: viewer/trafic-simulation/CarListLoader.hh
+viewer/CMakeFiles/glosm-viewer-glut.dir/GlosmViewer.cc.o: viewer/../libglosm-client/../viewer/MyGlobalVariables.hh
+viewer/CMakeFiles/glosm-viewer-glut.dir/GlosmViewer.cc.o: viewer/../libglosm-client/../viewer/trafic-simulation/CarGlosm.hh
+viewer/CMakeFiles/glosm-viewer-glut.dir/GlosmViewer.cc.o: viewer/../libglosm-client/../viewer/trafic-simulation/CarListLoader.hh
+viewer/CMakeFiles/glosm-viewer-glut.dir/GlosmViewer.cc.o: viewer/../libglosm-client/../viewer/trafic-simulation/GPXWriter.hh
 viewer/CMakeFiles/glosm-viewer-glut.dir/GlosmViewer.cc.o: viewer/../libglosm-client/glosm/../../viewer/trafic-simulation/GPXWriter.hh
 viewer/CMakeFiles/glosm-viewer-glut.dir/GlosmViewer.cc.o: viewer/../libglosm-client/glosm/SphericalProjection.hh
 viewer/CMakeFiles/glosm-viewer-glut.dir/GlosmViewer.cc.o: viewer/../libglosm-client/glosm/CheckGL.hh
@@ -86,8 +92,10 @@ viewer/CMakeFiles/glosm-viewer-glut.dir/__/libglosm-server/PreloadedXmlDatasourc
 
 viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/CarGlosm.cc.o: viewer/trafic-simulation/CarGlosm.cc
 viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/CarGlosm.cc.o: viewer/trafic-simulation/CarGlosm.hh
+viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/CarGlosm.cc.o: viewer/trafic-simulation/CarListLoader.hh
 viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/CarGlosm.cc.o: viewer/trafic-simulation/GPXWriter.hh
-viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/CarGlosm.cc.o: viewer/trafic-simulation/OptionParserCSV.hh
+viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/CarGlosm.cc.o: viewer/../libglosm-client/../viewer/MyGlobalVariables.hh
+viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/CarGlosm.cc.o: viewer/../libglosm-client/../viewer/trafic-simulation/CarGlosm.hh
 viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/CarGlosm.cc.o: viewer/../libglosm-client/glosm/../../viewer/trafic-simulation/GPXWriter.hh
 viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/CarGlosm.cc.o: viewer/../libglosm-client/glosm/FirstPersonViewer.hh
 viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/CarGlosm.cc.o: viewer/../libglosm-client/glosm/GPXLayer.hh
@@ -116,13 +124,13 @@ viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/CarGlosm.cc.o: viewer/
 viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/CarGlosm.cc.o: viewer/../libglosm-server/glosm/id_map.hh
 viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/CarGlosm.cc.o: viewer/../libglosm-server/glosm/osmtypes.h
 
+viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/CarListLoader.cc.o: viewer/trafic-simulation/CarListLoader.cc
+viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/CarListLoader.cc.o: viewer/trafic-simulation/CarListLoader.hh
+
 viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/GPXWriter.cc.o: viewer/trafic-simulation/GPXWriter.cc
 viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/GPXWriter.cc.o: viewer/trafic-simulation/GPXWriter.hh
 viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/GPXWriter.cc.o: viewer/../libglosm-server/glosm/BBox.hh
 viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/GPXWriter.cc.o: viewer/../libglosm-server/glosm/GeometryOperations.hh
 viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/GPXWriter.cc.o: viewer/../libglosm-server/glosm/Math.hh
 viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/GPXWriter.cc.o: viewer/../libglosm-server/glosm/osmtypes.h
-
-viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/OptionParserCSV.cc.o: viewer/trafic-simulation/OptionParserCSV.cc
-viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/OptionParserCSV.cc.o: viewer/trafic-simulation/OptionParserCSV.hh
 

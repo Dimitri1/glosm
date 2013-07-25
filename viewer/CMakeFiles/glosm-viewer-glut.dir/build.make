@@ -121,29 +121,29 @@ viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/CarGlosm.cc.o.provides
 viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/CarGlosm.cc.o.provides.build: viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/CarGlosm.cc.o
 .PHONY : viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/CarGlosm.cc.o.provides.build
 
-viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/OptionParserCSV.cc.o: viewer/CMakeFiles/glosm-viewer-glut.dir/flags.make
-viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/OptionParserCSV.cc.o: viewer/trafic-simulation/OptionParserCSV.cc
+viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/CarListLoader.cc.o: viewer/CMakeFiles/glosm-viewer-glut.dir/flags.make
+viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/CarListLoader.cc.o: viewer/trafic-simulation/CarListLoader.cc
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/dimitri/Dropbox/trc_simulator_8/glosm/CMakeFiles $(CMAKE_PROGRESS_4)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/OptionParserCSV.cc.o"
-	cd /home/dimitri/Dropbox/trc_simulator_8/glosm/viewer && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/OptionParserCSV.cc.o -c /home/dimitri/Dropbox/trc_simulator_8/glosm/viewer/trafic-simulation/OptionParserCSV.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/CarListLoader.cc.o"
+	cd /home/dimitri/Dropbox/trc_simulator_8/glosm/viewer && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/CarListLoader.cc.o -c /home/dimitri/Dropbox/trc_simulator_8/glosm/viewer/trafic-simulation/CarListLoader.cc
 
-viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/OptionParserCSV.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/OptionParserCSV.cc.i"
-	cd /home/dimitri/Dropbox/trc_simulator_8/glosm/viewer && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/dimitri/Dropbox/trc_simulator_8/glosm/viewer/trafic-simulation/OptionParserCSV.cc > CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/OptionParserCSV.cc.i
+viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/CarListLoader.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/CarListLoader.cc.i"
+	cd /home/dimitri/Dropbox/trc_simulator_8/glosm/viewer && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/dimitri/Dropbox/trc_simulator_8/glosm/viewer/trafic-simulation/CarListLoader.cc > CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/CarListLoader.cc.i
 
-viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/OptionParserCSV.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/OptionParserCSV.cc.s"
-	cd /home/dimitri/Dropbox/trc_simulator_8/glosm/viewer && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/dimitri/Dropbox/trc_simulator_8/glosm/viewer/trafic-simulation/OptionParserCSV.cc -o CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/OptionParserCSV.cc.s
+viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/CarListLoader.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/CarListLoader.cc.s"
+	cd /home/dimitri/Dropbox/trc_simulator_8/glosm/viewer && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/dimitri/Dropbox/trc_simulator_8/glosm/viewer/trafic-simulation/CarListLoader.cc -o CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/CarListLoader.cc.s
 
-viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/OptionParserCSV.cc.o.requires:
-.PHONY : viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/OptionParserCSV.cc.o.requires
+viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/CarListLoader.cc.o.requires:
+.PHONY : viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/CarListLoader.cc.o.requires
 
-viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/OptionParserCSV.cc.o.provides: viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/OptionParserCSV.cc.o.requires
-	$(MAKE) -f viewer/CMakeFiles/glosm-viewer-glut.dir/build.make viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/OptionParserCSV.cc.o.provides.build
-.PHONY : viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/OptionParserCSV.cc.o.provides
+viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/CarListLoader.cc.o.provides: viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/CarListLoader.cc.o.requires
+	$(MAKE) -f viewer/CMakeFiles/glosm-viewer-glut.dir/build.make viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/CarListLoader.cc.o.provides.build
+.PHONY : viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/CarListLoader.cc.o.provides
 
-viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/OptionParserCSV.cc.o.provides.build: viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/OptionParserCSV.cc.o
-.PHONY : viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/OptionParserCSV.cc.o.provides.build
+viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/CarListLoader.cc.o.provides.build: viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/CarListLoader.cc.o
+.PHONY : viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/CarListLoader.cc.o.provides.build
 
 viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/GPXWriter.cc.o: viewer/CMakeFiles/glosm-viewer-glut.dir/flags.make
 viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/GPXWriter.cc.o: viewer/trafic-simulation/GPXWriter.cc
@@ -198,7 +198,7 @@ glosm__viewer__glut_OBJECTS = \
 "CMakeFiles/glosm-viewer-glut.dir/GLUTMain.cc.o" \
 "CMakeFiles/glosm-viewer-glut.dir/GlosmViewer.cc.o" \
 "CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/CarGlosm.cc.o" \
-"CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/OptionParserCSV.cc.o" \
+"CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/CarListLoader.cc.o" \
 "CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/GPXWriter.cc.o" \
 "CMakeFiles/glosm-viewer-glut.dir/__/libglosm-server/PreloadedXmlDatasource.cc.o"
 
@@ -208,7 +208,7 @@ glosm__viewer__glut_EXTERNAL_OBJECTS =
 viewer/glosm-viewer-glut: viewer/CMakeFiles/glosm-viewer-glut.dir/GLUTMain.cc.o
 viewer/glosm-viewer-glut: viewer/CMakeFiles/glosm-viewer-glut.dir/GlosmViewer.cc.o
 viewer/glosm-viewer-glut: viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/CarGlosm.cc.o
-viewer/glosm-viewer-glut: viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/OptionParserCSV.cc.o
+viewer/glosm-viewer-glut: viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/CarListLoader.cc.o
 viewer/glosm-viewer-glut: viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/GPXWriter.cc.o
 viewer/glosm-viewer-glut: viewer/CMakeFiles/glosm-viewer-glut.dir/__/libglosm-server/PreloadedXmlDatasource.cc.o
 viewer/glosm-viewer-glut: libglosm-client/libglosm-client.so
@@ -232,7 +232,7 @@ viewer/CMakeFiles/glosm-viewer-glut.dir/build: viewer/glosm-viewer-glut
 viewer/CMakeFiles/glosm-viewer-glut.dir/requires: viewer/CMakeFiles/glosm-viewer-glut.dir/GLUTMain.cc.o.requires
 viewer/CMakeFiles/glosm-viewer-glut.dir/requires: viewer/CMakeFiles/glosm-viewer-glut.dir/GlosmViewer.cc.o.requires
 viewer/CMakeFiles/glosm-viewer-glut.dir/requires: viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/CarGlosm.cc.o.requires
-viewer/CMakeFiles/glosm-viewer-glut.dir/requires: viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/OptionParserCSV.cc.o.requires
+viewer/CMakeFiles/glosm-viewer-glut.dir/requires: viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/CarListLoader.cc.o.requires
 viewer/CMakeFiles/glosm-viewer-glut.dir/requires: viewer/CMakeFiles/glosm-viewer-glut.dir/trafic-simulation/GPXWriter.cc.o.requires
 viewer/CMakeFiles/glosm-viewer-glut.dir/requires: viewer/CMakeFiles/glosm-viewer-glut.dir/__/libglosm-server/PreloadedXmlDatasource.cc.o.requires
 .PHONY : viewer/CMakeFiles/glosm-viewer-glut.dir/requires

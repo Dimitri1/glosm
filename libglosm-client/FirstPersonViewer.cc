@@ -32,8 +32,6 @@
 #include <stdio.h>
 #include "mglu.h"
 
-#include "../viewer/MyGlobalVariables.hh"
-
 
 
 
