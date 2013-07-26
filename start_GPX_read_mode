@@ -2,8 +2,7 @@
 
 echo Start GLOSM
 
-
-./viewer/glosm-viewer-glut   -s   GPX_out_thread/GPX_out_1.gpx   map/las_vegas.osm  OPTIONS.opt  GPX_write_mode : OFF   |->  out.gpx 
+./viewer/glosm-viewer-glut       OPTION.opt     map/glosm.osm    GPX_write_mode : OFF   |->  out.gpx 
 
 exit 0
 

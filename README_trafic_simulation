@@ -1,14 +1,67 @@
                   traffic-simulation builded on glosm 0.0.3
-                  ========================================
+                  =========================================
 
 
+It is important to read this file to understand 
+what have been already done for this project, 
+and to understand the principle of testing and launching. 
+
+Some important diagrams are available on doc/dia.
+There are .dia file , so you need to install dia.
+(sudo apt-get install dia). 
+
+Especially : 
+	-> UML diagram of trafin simlation
+ 	-> Diagram of algo principle of the traffic simu
+	-> Architecture of glosm, light 
+	-> Simple diagram about compilation system
+
+For the glosm compilation , see the README of glosm "README".
+All the required library are referenced in it.
+Once all is ready , just launch 
+
+cmake .. && sudo apt-get install
+
+to compile trafic-simlation & glosm.
+
+
+
+
+About the traffic-simulation Project : 
+--------------------------------------
+
+
+
+Advancement : 
+=============
 
 At now , the traffic-simulation is in on a very early stage of development.
 It is on a stage of implementation of CarHandler class.
 
 
+The last features witches have been implemented and tested 
+are : 
+
+GetPointsTrajectoryFromTo(.. ) ;  
+WriteTrajectory(..)  ;    	Carglosm.cc
+
+
+
+Usage of traffic-simulation with glosm
+=====================================
+
+There are one launcher for each mode ,
+
+./start_GPX_write_mode for write mode 
+./start_GPX_read_mode for read mode 
+
+So, o start a new simulation , lauch first ./start_GPX_write_mode
+and then ./start_GPX_read_mode to observe all the traxes. 
+
+See below for more details about the two mods. 
+
 Principle of testing :
------------------------
+======================
 
 For testing all the functions of "moving" in the map, 
 i have adopted a method of writing/reading in two successive 
@@ -27,78 +80,14 @@ are corrects, if it is what have been expected.
 
 
 
-The last features witches have been implemented and tested 
-are : 
 
-GetPointsTrajectoryFromTo(.. ) ;  
-WriteTrajectory(..)  ;    	in Carglosm.cc
+Notes :
+-------
 
 
+First person Viewer Controls (glosm) :
+======================================
 
-
-
-
-Features
-========
-
-   * Basic OSM XML loader
-   * Basic geometry generator (renders buildings, barriers and roads
-     in 3D, other polygons as lines at ground level)
-   * Mercator and spherical projections
-   * Support for tracks in GPX format
-   * SRTM elevation data support
-   * First-person real-time 3D map viewer
-   * Command-line ortho tile renderer
-   * Extensible framework for building (other) 3D geodata
-     visualization applications
-
-Usage
-=====
-
-  T
-
-
-  This package contains two applications: interactive map viewer
-  (glosm-viewer) and .png tile generator (glosm-tiler).
-
-  glosm-viewer
-  ------------
-
-    glosm-viewer [-sfh] [-t <path>] [-l location] <file.osm|->
-                                                     [<file.gpx> ...]
-
-  runs interactive 3D map viewer for a specified map dump. Dumps can
-  be obtained from OpenStreetMap editing applications (jOSM,
-  Mercator), via OpenStreetMap API, from third parties and in many
-  other ways. Sample (fake) .osm file is provided in this package
-  under testdata/ subdirectory.
-
-  If `-' is provided as filename, osm data is read from stdin.
-
-  Please be careful with large dumps, as the application requires
-  amount of RAM comparable to the .osm file size. It also takes some
-  time (under a minute, however) to load a large dump.
-
-  Options:
-
-    -s      - enable spherical Earth view (instead of mercator)
-    -f      - disable GLEW OpenGL version check (for testing purposes)
-    -h      - show help
-    -t      - specify path to directory with SRTM (*.hgt) files and
-              enable 3D terrain layer
-    -l      - specify initial position and direction of viewer.
-              Argument is comma-separated list of floating-point values:
-              longitude, latitude, elevation, yaw and pitch. Each value
-              may be empty and extra values in the end may be omitted, in
-              which case program defaults are used. Values are specified
-              in decimal angles and meters.
-              example: -l 57.33,34.11,100
-                             (55.33E, 34.11N, height = 100 meters)
-              example: -l ,,100,180,0
-                             (default location, height = 100 meters,
-                              look straight to south)
-
-  Controls:
 
     W or Up     - move forward
     S or Down   - move backward
@@ -121,155 +110,4 @@ Usage
     Right mouse button toggles mouse grab. When grab is off, view
     may be dragged with left mouse button.
 
-  glosm-tiler
-  -----------
 
-    glosm-tiler [options] <file.osm|-> <outdir>
-
-  runs tile renderer for a specified dump, which are saved into outdir
-  in the same format as mapnik tiles (<outdir>/<zoom>/<x>/<y>.png).
-
-  If `-' is provided as filename, osm data is read from stdin.
-
-  Options:
-
-    -0..-9     - set png compression level (default 6)
-
-    -x minlon
-    -X maxlon
-    -y minlat
-    -Y maxlat  - set bounding box for rendering. Units are floating
-                 point degrees (e.g. 55.12345)
-
-    -z minzoom
-    -Z maxzoom - set zoom levels for rendering. Default 0 - 18
-
-    -s skew    - set skew for pseudo-3D effect (default = 1.0, 0 =
-                 no skew = map without 3D effect)
-
-    -m samples - specify number of samples for multisample antialiasing
-                 (default = 4, use 1 if your drivers doesn't support
-                 multisampling)
-
-  Note on optimizing tiles
-  ------------------------
-
-  For optimal rendering speed and minimal space taken by tiles, it's
-  usually better to render tiles with -1 (minimal compression level),
-  and compress them by optipng afterwards:
-
-  find <outdir> -name "*.png" -print0 |
-      xargs -0 -n 64 -P <jobs> optipng -quiet -o1
-
-  where outdir is directory containing tiles and jobs is desired
-  number of jobs (probably # of cpus + 1).
-
-OpenGL details
-==============
-
-  Application requires OpenGL version >= 1.5. Currently, only notable
-  required feature is buffer objects support (glGenBuffers et al.)
-
-  When GLEW is used, two checks for required OpenGL functionality
-  are done: GLEW check for GL_VERSION_1_5 and check for required
-  functions != NULL. The first is disabled with -f option to viewer,
-  if this options makes viewer work for you, please report.
-
-  Additionally, glosm-tiler requires pbuffer support and that is
-  currently only available through GLX, thus X11 installation is
-  required to use glosm-tiler.
-
-  Multisampling support is also highly recommended.
-
-OpenStreetMap tag support
-=========================
-
-  There are some notable tags this software supports:
-
-    * height
-    * min_height
-    * building:levels
-    * building:min_level
-    * building:ground_level
-    * building:skipped_levels (see [3])
-
-  to determine height of 3D objects (buildings, barriers). See [2].
-  Height of one level is taken as 3 meters, for some 1-level buildings
-  1 meter is added for basement.
-
-  [2] http://wiki.openstreetmap.org/wiki/User%3AJongleur/MultiLevel_Building_Shapes
-  [3] http://wiki.openstreetmap.org/wiki/User_talk:Jongleur/MultiLevel_Building_Shapes
-
-    * building:roof:shape
-    * building:roof:orientation
-    * building:roof:angle
-
-  for specific roof shapes support. See [4]. Supported roof shapes
-  are: flat, pitched, hipped, pyramidal, conical (currently same as
-  pyramidal), crosspitched.
-
-  [4] http://wiki.openstreetmap.org/wiki/Proposed_features/Building_attributes
-
-    * width
-    * lanes
-
-  for highway widths.
-
-API stability
-=============
-
-  As the project is on early stages of development, neither API not
-  ABI compatibility is guaranteed, so for now use library on your own
-  risk. Because of that, neither versioned library (.so.N) nor includes
-  are currently installed.
-
-  Primary candidates for API change are:
-
-    * OsmDatasource interface
-    * GeometryGenerator (due to above)
-    * Geometry (material support, serialization)
-
-Tests
-=====
-
-  There are some tests under tests/ subdirectory, you can run them by
-  running `ctest' from your buildtree.
-
-Documentation
-=============
-
-  Doxygen is supported, just run `doxygen' from this directory to
-  generate class descriptions under doc/html/. There's also some more
-  documentation under doc/.
-
-  There are some simple examples of working with glosm under examples/
-  subdirectory.
-
-License
-=======
-
-  This software is distributed under the GNU Affero General Public
-  License version 3. Please read the COPYING file for more information.
-
-Credits
-=======
-
-  Author:
-    Dmitry Marakasov <amdmi3@amdmi3.ru>
-
-Contacts
-========
-
-  Apart from emails above,
-
-    * Source code repository:
-      https://github.com/AMDmi3/glosm
-
-    * Wiki:
-      https://github.com/AMDmi3/glosm/wiki
-
-    * Demo of tiler-generated raster map:
-      http://glosm.amdmi3.ru
-
-    * Page on OSM wiki with some screenshots:
-      http://wiki.openstreetmap.org/wiki/Glosm
