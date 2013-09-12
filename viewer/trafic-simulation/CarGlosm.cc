@@ -163,16 +163,15 @@ void*  my_thread_process(void* arg)
     fprintf(stderr,"Nb way%d \n", ways.size() ) ;
     std::map<std::string, std::string>::iterator it_TagsMap;
    
-    if(ways.size() != 0 )
-    { 
+
         for(it = ways.begin(); it != ways.end(); it++)
         { fprintf(stderr," Nb Tags  : %d \n",(it->Tags).size()) ;
-          if( (it->Tags).size() != 0  )
-          { for(it_TagsMap = it->Tags.begin(); it_TagsMap != it->Tags.end(); it_TagsMap++)
+        
+           for(it_TagsMap = it->Tags.begin(); it_TagsMap != it->Tags.end(); it_TagsMap++)
             { fprintf(stderr,"	Tags : (%s), (%s)\n",(it_TagsMap->first).c_str() , (it_TagsMap->second).c_str() ) ; }
-          }
+          
         } 
-    }
+    
    
 
 
